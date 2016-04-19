@@ -1,22 +1,22 @@
 <?php
-use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Database\Capsule\Manager as DB;
 
-$capsule = new Capsule;
+$db = new DB;
 
-$capsule->addConnection([
+$db->addConnection([
     'driver'    => 'mysql',
     'host'      => 'localhost',
-    'database'  => 'tech_jobs',
-    'username'  => 'root',
-    'password'  => 'root',
+    'database'  => 'DATABASE',
+    'username'  => 'USER',
+    'password'  => 'PASSWORD',
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',
 ]);
 
 
-// Make this Capsule instance available globally via static methods... (optional)
-$capsule->setAsGlobal();
+// Make this db instance available globally via static methods...
+$db->setAsGlobal();
 
-// Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
-$capsule->bootEloquent();
+// Setup the Eloquent ORM..
+$db->bootEloquent();
